@@ -1,0 +1,94 @@
+<h1>Admin Edit book info</h1>
+
+<p-splitter>
+  <ng-template pTemplate>
+    <div class="admin-justify form">
+      <div class="card">
+        <span class="p-float-label">
+          <p-inputNumber id="bookId" inputId="withoutgrouping" [useGrouping]="false" mode="decimal" [(ngModel)]="bookId" [disabled]="true"/>
+          <label for="bookId">Book ID</label>
+        </span>
+        <small id="bookId-help">Book ID, definied at moment of creation of a book</small>
+      </div>
+
+      <div class="card">
+        <span class="p-float-label">
+          <input pInputText id="title" [(ngModel)]="title" />
+          <label for="title">Title</label>
+        </span>
+        <small id="title-help">Enter to change Title</small>
+      </div>
+
+      <div class="card">
+        <span class="p-float-label">
+          <input pInputText id="author" [(ngModel)]="author" />
+          <label for="author">Author</label>
+        </span>
+        <small id="author-help">Enter to change Author</small>
+      </div>
+
+      <div class="card">
+        <span class="p-float-label">
+          <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="description"></textarea>
+          <label for="description">Description</label>
+        </span>
+        <small id="description-help">Enter to change Book Description</small>
+      </div>
+
+      <div class="card">
+        <span class="p-float-label">
+          <input pInputText id="cover" [(ngModel)]="cover" [style]="{ width: '100%' }" />
+          <label for="cover">Cover</label>
+        </span>
+        <small id="cover-help">Enter to change Book cover image</small>
+      </div>
+
+      <p-inputGroup>
+        <div class="card">
+          <span class="p-float-label">
+            <p-inputNumber mode="decimal" [minFractionDigits]="2" id="price" [(ngModel)]="price" />
+            <label for="price">Price</label>
+          </span>
+          <small id="price-help">Enter to change Book price</small>
+        </div>
+
+        <div class="card">
+          <span class="p-float-label">
+            <p-inputSwitch id="deleted" [(ngModel)]="deleted"></p-inputSwitch>
+            <label class="label-delete" for="deleted">Deleted</label>
+          </span>
+        </div>
+      </p-inputGroup>
+
+      <div class="card">
+        <span class="p-float-label">
+          <input pInputText id="category" [(ngModel)]="category" />
+          <label for="category">Category</label>
+        </span>
+        <small id="category-help">Enter to change Book category</small>
+      </div>
+      <div class="card">
+        <p-button label="Submit" [loading]="loading" (onClick)="saveBookData()"></p-button>
+      </div>
+
+    </div>
+  </ng-template>
+  <ng-template pTemplate>
+    <div class="admin-justify book-display" [ngClass]="{'deleted': deleted}">
+      <p-card [header]="title" [subheader]="author" styleClass="book-detail-card">
+        <ng-template pTemplate="header">
+          <img [alt]="title" [src]="cover" class="card-image" />
+        </ng-template>
+        <p>
+          {{description}}
+        </p>
+        <ng-template pTemplate="footer">
+          <div class="footer-between">
+            <span class="book-category">Category: {{category}}</span>
+            <span class="book-price">{{price | currency: 'EUR'}}</span>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </ng-template>
+</p-splitter>

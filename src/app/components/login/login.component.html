@@ -1,0 +1,26 @@
+<div class="login">
+  <div class="login__card">
+    <p-card header="Login">
+      <span class="p-float-label">
+        <input pInputText id="email" class="w-100" [(ngModel)]="email" email />
+        <label for="email">Email</label>
+      </span>
+      <small id="email-help">Enter email for your account</small>
+
+      <span class="p-float-label mt-2">
+        <p-password [toggleMask]="true" styleClass="w-100" inputStyleClass="w-100" [(ngModel)]="password" [feedback]="false"></p-password>
+        <label for="password">Password</label>
+      </span>
+
+      <div class="card mt-2">
+        <p-button label="Submit" [loading]="loading" (onClick)="login()" [disabled]="isDisabled()"></p-button>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <a [routerLink]="['/register']"><small>Register</small></a>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+
+<p-toast [life]="5000"></p-toast>

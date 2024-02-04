@@ -1,0 +1,14 @@
+<p-card [header]="book?.title" [subheader]="book?.author" styleClass="book-detail-card">
+  <ng-template pTemplate="header">
+    <img alt="Card" [src]="book?.cover" class="card-image" />
+  </ng-template>
+  <p>
+    {{book?.description}}
+  </p>
+  <ng-template pTemplate="footer">
+    <div class="footer-between">
+      <span class="book-category">Category: {{book?.category}}</span>
+      <span class="book-price">{{book?.price | currency: 'EUR'}}</span>
+    </div>
+  </ng-template>
+</p-card>

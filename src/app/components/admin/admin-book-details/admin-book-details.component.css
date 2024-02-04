@@ -1,0 +1,36 @@
+.admin-justify {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.admin-justify.form {
+  margin: 3em 1.5em;
+  flex-direction: column;
+}
+
+.admin-justify.book-display {
+  align-items: center;
+}
+
+.card {
+  margin: 1em 2em;
+}
+
+.deleted {
+  opacity: 0.5;
+}
+
+.label-delete {
+  left: 110%;
+}
+
+.footer-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.book-price {
+  font-size: 2em;
+}

@@ -1,0 +1,8 @@
+tr[ng-reflect-router-link^="/admin-book-details"] {
+  transition: background-color 0.25s;
+}
+
+tr[ng-reflect-router-link^="/admin-book-details"]:hover {
+  cursor: pointer;
+  background-color: var(--surface-ground);
+}

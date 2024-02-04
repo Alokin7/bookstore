@@ -1,0 +1,40 @@
+<div class="register">
+  <div class="register__card">
+    <p-card header="Register">
+
+      <span class="p-float-label">
+        <input pInputText id="firstName" class="w-100" [(ngModel)]="firstName" />
+        <label for="firstName">First name</label>
+      </span>
+      <small id="firstName-help">Enter first name for your account</small>
+
+      <span class="p-float-label mt-2">
+        <input pInputText id="lastName" class="w-100" [(ngModel)]="lastName" />
+        <label for="lastName">Last name</label>
+      </span>
+      <small id="lastName-help">Enter last name for your account</small>
+
+
+      <span class="p-float-label mt-2">
+        <input pInputText id="email" class="w-100" [(ngModel)]="email" email />
+        <label for="email">Email</label>
+      </span>
+      <small id="email-help">Enter email for your account</small>
+
+      <span class="p-float-label mt-2">
+        <p-password [(ngModel)]="password" [toggleMask]="true" styleClass="w-100" inputStyleClass="w-100" ></p-password>
+        <label for="password">Password</label>
+      </span>
+
+      <div class="card mt-2">
+        <p-button label="Submit" [loading]="loading" (onClick)="submit()" [disabled]="isDisabled()"></p-button>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <a [routerLink]="['']"><small>Login</small></a>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+
+<p-toast [life]="5000"></p-toast>

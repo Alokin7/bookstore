@@ -1,0 +1,9 @@
+.footer-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.book-price {
+  font-size: 2em;
+}
